@@ -6,6 +6,8 @@ public class Director {
 		
 		House h;
 		
+		
+		
 		if (typeHouse.equals("h1")) {
 			h = new House.Builder()
 					.withType("apto")
