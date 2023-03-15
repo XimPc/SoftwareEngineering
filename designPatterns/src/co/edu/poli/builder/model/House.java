@@ -20,6 +20,34 @@ public final class House {
 		this.garden = builder.garden;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public Ceil getCeil() {
+		return ceil;
+	}
+
+	public Floor getFloor() {
+		return floor;
+	}
+
+	public Door getDoor() {
+		return door;
+	}
+
+	public Window getWindow() {
+		return window;
+	}
+
+	public Pool getPool() {
+		return pool;
+	}
+
+	public Garden getGarden() {
+		return garden;
+	}
+
 	public static class Builder {
 
 		private String type;
