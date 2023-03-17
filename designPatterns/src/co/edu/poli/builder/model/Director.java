@@ -6,6 +6,9 @@ public class Director {
 		
 		House h;
 		
+        Pool Piscina = new Pool (10,20);
+        
+		
 		
 		
 		if (typeHouse.equals("h1")) {
@@ -15,7 +18,7 @@ public class Director {
 					.withFloor(null)
 					.withDoor(null)
 					.withWindow(null)
-					.withPool(null)
+					.withPool(Piscina)
 					.build();
 		} else {
 			h = new House.Builder()
