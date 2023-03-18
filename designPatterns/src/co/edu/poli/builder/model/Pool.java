@@ -22,6 +22,12 @@ public class Pool {
 			this.ancho = ancho;
 		}
 		
+		
+		 public String toString() {
+		return " [alto=" + alto + ", ancho=" + ancho + "]";
+		}
+
+		
 	}
 	
 
