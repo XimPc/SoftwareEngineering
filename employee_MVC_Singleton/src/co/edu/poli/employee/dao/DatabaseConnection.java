@@ -14,7 +14,7 @@ public class DatabaseConnection {
 		String pass = "123";
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(url, user, pass);
 			
 			System.out.println("Conexion oks");

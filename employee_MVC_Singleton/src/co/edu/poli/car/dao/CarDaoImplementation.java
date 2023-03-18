@@ -9,13 +9,14 @@ import java.util.List;
 
 import co.edu.poli.car.model.Car;
 import co.edu.poli.employee.dao.DatabaseConnection;
+//import co.edu.poli.employee.model.Employee;
 
-public class CarDaoImplementation implements CarDao {
+public  class CarDaoImplementation implements CarDao {
     static Connection con = DatabaseConnection.getConnection();
 
     @Override
     public Car add(Car aut) throws SQLException {
-        String query = "insert into Car(aut_placa, aut_modelo, aut_color) VALUES (?, ?, ?)";
+        String query = "insert into car(aut_placa, aut_modelo, aut_color) VALUES (?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, aut.getAut_placa());
         ps.setString(2, aut.getAut_modelo());
@@ -28,7 +29,7 @@ public class CarDaoImplementation implements CarDao {
     public Car delete(String placa) throws SQLException {
         Car e2 = getCar(placa);
         if (e2 != null) {
-            String query = "delete from Car where aut_placa =?";
+            String query = "delete from car where aut_placa =?";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, placa);
             ps.executeUpdate();
@@ -37,7 +38,7 @@ public class CarDaoImplementation implements CarDao {
     }
 
     public Car getCar(String placa) throws SQLException {
-        String query = "select * from Car where aut_placa= ?";
+        String query = "select * from car where aut_placa= ?";
         PreparedStatement ps = con.prepareStatement(query);
         Car aut = null;
         ps.setString(1, placa);
@@ -54,9 +55,9 @@ public class CarDaoImplementation implements CarDao {
             return null;
     }
 
-   
-    public List<Car> getCars() throws SQLException {
-        String query = "select * from Car";
+	@Override
+    public List<Car> getCar () throws SQLException {
+        String query = "select * from car";
         PreparedStatement ps = con.prepareStatement(query);
         ResultSet rs = ps.executeQuery();
         List<Car> ls = new ArrayList<Car>();
@@ -69,11 +70,22 @@ public class CarDaoImplementation implements CarDao {
     }
 
    
+   
+   
+    
     public Car update(String placa, Car aut) throws SQLException {
         Car e2 = getCar(placa);
         if (e2 != null);
-		return e2;
-    }
+        {
+        	String query = "update car set emp_placa=?, " + " emp_modelo= ? where emp_color = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, aut.getAut_placa());
+			ps.setString(2, aut.getAut_modelo());
+			ps.setString(3, aut.getAut_color());
+			ps.executeUpdate();
+		}
+        return e2;
+        }
 
 	@Override
 	public Car getEmployee(String aut) throws SQLException {
@@ -81,10 +93,14 @@ public class CarDaoImplementation implements CarDao {
 		return null;
 	}
 
-	@Override
-	public List<Car> getCar() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	
+
+
+		
 	}
-}
+		
+    
+
+	
+
 

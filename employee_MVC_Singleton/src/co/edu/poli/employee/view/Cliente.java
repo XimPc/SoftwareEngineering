@@ -31,7 +31,8 @@ public class Cliente {
 		String txtcolor = s.nextLine();
 		
 		CarController ec= new CarController (txtplaca,txtmodelo,txtcolor);
-		
+		ec.eventAdd();	
+		System.out.println(ec.eventReadAll());
 		s.close();
 	}
 
