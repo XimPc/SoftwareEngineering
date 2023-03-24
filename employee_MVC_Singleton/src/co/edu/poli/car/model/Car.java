@@ -1,11 +1,11 @@
 package co.edu.poli.car.model;
 
-public class Car {
+public class Car implements Cloneable {
 	
 	private String aut_placa;
 	private String aut_modelo;
 	private String aut_color;
-	
+
 	
 	
 	
@@ -16,7 +16,12 @@ public class Car {
 		this.aut_color = aut_color;
 	}
 	
-	
+	public Car (Car b) {
+		this.aut_placa =b.aut_placa ;
+		this.aut_modelo = b.aut_modelo;
+		this.aut_color = b.aut_color;
+		
+	}
 	
 	
 	
@@ -44,6 +49,13 @@ public class Car {
 		return "Car [aut_placa=" + aut_placa + ", aut_modelo=" + aut_modelo + ", aut_color=" + aut_color + "]";
 	}
 
-	
+	public Object cloneObj() {
+		return new Car(this);
+	}
+
+	@Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 	
 }

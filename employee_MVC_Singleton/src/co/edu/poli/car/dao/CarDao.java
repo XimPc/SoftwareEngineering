@@ -24,5 +24,7 @@ public interface CarDao {
             throws SQLException;
 
 		Car getCar(String placa) throws SQLException;
+		
+		//public Object cloneObj();
 	
 }

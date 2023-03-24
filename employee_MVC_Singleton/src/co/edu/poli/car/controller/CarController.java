@@ -61,4 +61,17 @@ public class CarController {
             return null;
         }
     }
+
+    public Object cloneObj() {
+        try {
+            // Crear una copia de 'e2' utilizando el método 'clone()' de la clase 'Object'
+            Car clone = (Car) e2.clone();
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            // Manejar la excepción si 'Car' no implementa la interfaz 'Cloneable'
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
