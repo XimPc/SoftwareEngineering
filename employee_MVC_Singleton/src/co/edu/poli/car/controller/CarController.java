@@ -11,11 +11,30 @@ public class CarController {
 
     Car e2;
     CarDao edao2;
+    
+    Car Clon;
+   
+
+	
+    
 
     public CarController(String placa, String modelo, String color) {
         e2 = new Car(placa, modelo, color);
         edao2 = new CarDaoImplementation();
+    	
+		Clon = (Car) e2.cloneObj();
     }
+    
+    public Car getClon() {
+		return Clon;
+	}
+
+
+
+	public void setClonPlaca(String placa) {
+		Clon.setAut_placa(placa);
+	}
+   
 
     public Car eventAdd() {
         try {
@@ -62,16 +81,6 @@ public class CarController {
         }
     }
 
-    public Object cloneObj() {
-        try {
-            // Crear una copia de 'e2' utilizando el método 'clone()' de la clase 'Object'
-            Car clone = (Car) e2.clone();
-            return clone;
-        } catch (CloneNotSupportedException e2) {
-            // Manejar la excepción si 'Car' no implementa la interfaz 'Cloneable'
-            e2.printStackTrace();
-            return null;
-        }
-    }
+ 
 
 }

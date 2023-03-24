@@ -3,7 +3,7 @@ package co.edu.poli.car.view;
 import java.util.Scanner;
 
 import co.edu.poli.car.controller.CarController;
-import co.edu.poli.car.model.Car;
+
 
 
 
@@ -23,14 +23,19 @@ public class Cliente {
 		CarController ec= new CarController (txtplaca,txtmodelo,txtcolor);
 		
 		
-		Car clonecar1 = (Car) ec.cloneObj();
+		//Car clonecar1 = (Car) ec.cloneObj();
 
-		clonecar1.setAut_placa("8888");
-		clonecar1.setAut_modelo("x");
-		System.out.println(clonecar1);
+		//clonecar1.setAut_placa("8888");
+		//clonecar1.setAut_modelo("x");
+		System.out.println("Ingresar Modificación de Placa:");
+		String setClonPlaca=s.nextLine();
+		
+		
+		ec.setClonPlaca(setClonPlaca);
+		
+		System.out.println(ec.getClon());
 		
 		ec.eventAdd();	
-		
 		
 		
 		System.out.println(ec.eventReadAll());
