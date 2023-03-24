@@ -26,6 +26,7 @@ public class Cliente {
 		Car clonecar1 = (Car) ec.cloneObj();
 
 		clonecar1.setAut_placa("8888");
+		clonecar1.setAut_modelo("x");
 		System.out.println(clonecar1);
 		
 		ec.eventAdd();	
