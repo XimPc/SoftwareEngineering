@@ -1,5 +1,10 @@
 package co.edu.poli.adapter.model;
 
+/**
+ * 
+ * @author wilsonsoto
+ *
+ */
 public class Cliente {
 
 	public static void main(String[] args) {
