@@ -1,18 +1,23 @@
-package co.edu.poli.facade.model;
+package co.edu.poli.facadeNo1.model;
 
-public abstract class MobileShop {
+class Iphone implements MobileShopInterface {
 
 	private String model;
 	private String price;
 	
-	public abstract String modelNo();
-	
-	public abstract String price();
-
-	public MobileShop(String model, String price) {
-		super();
+	public Iphone(String model, String price) {
 		this.model = model;
 		this.price = price;
+	}
+
+	@Override
+	public String modelNo() {
+		return getModel();
+	}
+
+	@Override
+	public String price() {
+		return getPrice();
 	}
 
 	public String getModel() {
@@ -26,9 +31,8 @@ public abstract class MobileShop {
 	public String getPrice() {
 		return price;
 	}
-
+	
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	
 }
